@@ -28,7 +28,7 @@ let config = {
   messagingSenderId: '444116035444'
 }
 let db = Firebase.initializeApp(config).database()
-let menusResponse = db.ref('itemManager')
+let menusResponse = db.ref('epide-geografia/itemManager')
 
 export default {
   name: 'App',

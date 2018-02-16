@@ -1,5 +1,5 @@
 <template>
-    <td v-if="menu">
+    <td v-if="menu" :class="getActive(menu.url)">
         <a class="tab-link" :href="menu.url">
             <div class="tab-number">
                 <div>{{num}}</div>
@@ -14,11 +14,13 @@
 <script>
 export default {
   name: 'Menu',
+  methods: {
+      getActive: function(url){
+        if(url==location.href)
+            return "active"
+        else return ""
+      }
+  },
   props: ['menu', 'num']
-//   data () {
-//     return {
-//       msg: ''
-//     }
-//   }
 }
 </script>
